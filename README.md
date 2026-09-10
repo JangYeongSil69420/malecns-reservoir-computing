@@ -63,7 +63,7 @@ A separate readout is trained per horizon to directly predict `t + h` (rather th
 | 20 | 0.8120 | 0.4343 |
 | 50 | 0.5601 | 0.6593 |
 
-![Direct multi-horizon forecast trajectories](assets/multi_horizon_forecast.png)
+![Direct multi-horizon forecast trajectories](multi_horizon_forecast.png)
 
 The top panel shows the direct 20-step-ahead forecast tracking the general shape and phase of the attractor across the whole test window. The bottom panels show the expected degradation curve: R² drops off (with a partial recovery around horizon ~35–40, likely an artifact of the specific phase of the oscillator at that offset) while RMSE trends upward as the horizon lengthens — the signature of a system trying to predict further into a chaotic trajectory whose sensitivity to initial conditions grows with `h`.
 
@@ -71,9 +71,9 @@ The top panel shows the direct 20-step-ahead forecast tracking the general shape
 
 The more demanding test: after a short warm-up window driven by real data, ground truth is disconnected and the model's own 1-step predictions are fed back in as input, autonomously, for 200 steps.
 
-![Raw autonomous rollout](assets/autonomous_rollout_raw.png)
+![Raw autonomous rollout](autonomous_rollout_raw.png)
 
-![Stabilized autonomous rollout with error trace](assets/autonomous_rollout_stabilized.png)
+![Stabilized autonomous rollout with error trace](autonomous_rollout_stabilized.png)
 
 ```
 Mean Abs Error (First 20 Steps): 1.7948
